@@ -1,0 +1,19 @@
+﻿services:
+  gatekeeper:
+    image: gatekeeper
+    build:
+      context: .
+      dockerfile: Gatekeeper/Dockerfile
+
+  gatekeeper.grpc:
+    image: gatekeeper.grpc
+    build:
+      context: .
+      dockerfile: Gatekeeper.Grpc/Dockerfile
+
+  gatekeeper.graphql:
+    image: gatekeeper.graphql
+    build:
+      context: .
+      dockerfile: Gatekeeper.GraphQL/Dockerfile
+
