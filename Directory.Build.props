@@ -17,6 +17,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <InternalsVisibleTo Include="$(AssemblyName).Tests" />
+    <InternalsVisibleTo Include="$Gatekeeper.Tests" />
   </ItemGroup>
 </Project>
