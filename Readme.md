@@ -35,40 +35,6 @@ Gatekeeper/
 └── README.md                      # You're reading it
 ```
 
----
-
-## 📅 Build Plan (Week-by-Week)
-
-### Week 1 – Core Setup
-- [ ] ✅ Project scaffolding (Api, Core, Infrastructure)
-- [ ] ✅ Minimal API `/ping` endpoint
-- [ ] ✅ Redis docker config
-- [ ] ✅ Define `CheckRequest`, `RateLimitResult` models
-- [ ] ✅ Add Redis service & interface
-- [ ] ✅ Implement fixed window limiter
-
-### Week 2 – API & Logic
-- [ ] Add `/check` and `/consume` endpoints
-- [ ] Add unit + integration tests
-- [ ] Add logging with Serilog
-- [ ] Create reusable extension methods for DI
-
-### Week 3 – gRPC + Observability
-- [ ] Define `.proto` file + service
-- [ ] Implement gRPC server
-- [ ] Add Jaeger integration for tracing
-- [ ] Add Prometheus metrics export
-- [ ] Validate performance under load
-
-### Week 4 – GraphQL + Docs
-- [ ] Implement GraphQL query API (HotChocolate)
-- [ ] Expose status query: usage, limits, top violators
-- [ ] Polish README and architecture docs
-- [ ] Create Postman collection and example use cases
-- [ ] Finalize GitHub Actions CI/CD
-
----
-
 ## 🧪 API Examples
 
 ### `POST /check`
