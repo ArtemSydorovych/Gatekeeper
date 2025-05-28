@@ -5,5 +5,10 @@
         <Link>.dockerignore</Link>
       </Content>
     </ItemGroup>
+  
+    <ItemGroup>
+      <ProjectReference Include="..\Gatekeeper.Core\Gatekeeper.Core.csproj" />
+      <ProjectReference Include="..\Gatekeeper.Infrastructure\Gatekeeper.Infrastructure.csproj" />
+    </ItemGroup>
 
 </Project>

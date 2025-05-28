@@ -1,19 +1,47 @@
 ﻿services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+
   gatekeeper:
     image: gatekeeper
     build:
       context: .
-      dockerfile: Gatekeeper/Dockerfile
+      dockerfile: src/Gatekeeper.Api/Dockerfile
+    ports:
+      - "5000:8080"
+    depends_on:
+      - redis
+    environment:
+      - ConnectionStrings__Redis=redis:6379
 
   gatekeeper.grpc:
     image: gatekeeper.grpc
     build:
       context: .
-      dockerfile: Gatekeeper.Grpc/Dockerfile
+      dockerfile: src/Gatekeeper.Grpc/Dockerfile
+    ports:
+      - "5001:8080"
+    depends_on:
+      - redis
+    environment:
+      - ConnectionStrings__Redis=redis:6379
 
   gatekeeper.graphql:
     image: gatekeeper.graphql
     build:
       context: .
-      dockerfile: Gatekeeper.GraphQL/Dockerfile
+      dockerfile: src/Gatekeeper.GraphQL/Dockerfile
+    ports:
+      - "5002:8080"
+    depends_on:
+      - redis
+    environment:
+      - ConnectionStrings__Redis=redis:6379
 
+volumes:
+  redis_data:
