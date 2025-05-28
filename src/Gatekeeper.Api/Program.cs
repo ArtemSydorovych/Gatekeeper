@@ -10,8 +10,6 @@ builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
 
-app.MapGet("/ping", () => Results.Ok("pong"));
-
 app.MapPost("/check", async (CheckRequest request, IRateLimiter limiter) =>
 {
     var result = await limiter.CheckAsync(request);
@@ -25,3 +23,5 @@ app.MapPost("/consume", async (CheckRequest request, IRateLimiter limiter) =>
 });
 
 app.Run();
+
+public partial class Program;
